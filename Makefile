@@ -6,3 +6,12 @@ migrate:
 
 deploy:
 	git push heroku main
+
+lint:
+	poetry run flake8 task_manager
+
+messages:
+	poetry run django-admin makemessages -l ru
+
+compilemessages:
+	poetry run django-admin compilemessages 

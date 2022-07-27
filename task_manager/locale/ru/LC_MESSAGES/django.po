@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 16:51+0300\n"
+"POT-Creation-Date: 2022-07-27 16:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,50 +20,71 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/templates/index.html:9 task_manager/templates/index.html:18
-#: task_manager/templates/index.html:37
-#: task_manager/templates/users/create.html:9
-#: task_manager/templates/users/create.html:18
-#: task_manager/templates/users/create.html:38
-msgid "Task manager"
-msgstr "Менеджер задач"
-
-#: task_manager/templates/index.html:20
-#: task_manager/templates/users/create.html:20
-msgid "Users"
-msgstr "Пользователи"
-
-#: task_manager/templates/index.html:21
-#: task_manager/templates/users/create.html:21
-msgid "Log in"
-msgstr "Вход"
-
-#: task_manager/templates/index.html:22
-#: task_manager/templates/users/create.html:22
-msgid "Sign up"
-msgstr "Регистрация"
-
-#: task_manager/templates/index.html:28
+#: task_manager/templates/index.html:5
 msgid "Welcome to Task manager!"
 msgstr "Добро пожаловать в Менеджер задач!"
 
-#: task_manager/templates/index.html:29
+#: task_manager/templates/index.html:6
 msgid "Description"
 msgstr "Создание и назначение задач пользователю, которые требуют решения."
 
-#: task_manager/templates/index.html:31
+#: task_manager/templates/index.html:8
 msgid "Learn more"
 msgstr "Узнать больше"
 
-#: task_manager/templates/index.html:37
-#: task_manager/templates/users/create.html:38
+#: task_manager/templates/layouts/application.html:9
+#: task_manager/templates/layouts/application.html:18
+#: task_manager/templates/layouts/application.html:43
+msgid "Task manager"
+msgstr "Менеджер задач"
+
+#: task_manager/templates/layouts/application.html:20
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: task_manager/templates/layouts/application.html:23
+msgid "Users"
+msgstr "Пользователи"
+
+#: task_manager/templates/layouts/application.html:26
+#, fuzzy
+#| msgid "Log in"
+msgid "Log out"
+msgstr "Вход"
+
+#: task_manager/templates/layouts/application.html:28
+msgid "Sign up"
+msgstr "Регистрация"
+
+#: task_manager/templates/layouts/application.html:29
+#: task_manager/templates/users/login.html:9
+msgid "Log in"
+msgstr "Вход"
+
+#: task_manager/templates/layouts/application.html:43
 msgid "V.Shilo"
 msgstr "Шило В.В."
 
-#: task_manager/templates/users/create.html:28
+#: task_manager/templates/users/create.html:5
 msgid "Registration form"
 msgstr "Регистрация"
 
-#: task_manager/templates/users/create.html:32
+#: task_manager/templates/users/create.html:9
 msgid "Register"
 msgstr "Зарегистрировать"
+
+#: task_manager/templates/users/login.html:5
+msgid "Entrance"
+msgstr "Вход"
+
+#: task_manager/users/views.py:18
+msgid "User was registred successfully"
+msgstr "Пользователь был успешно зарегистрирован"
+
+#: task_manager/users/views.py:26
+msgid "You log in successfully"
+msgstr "Вы успешло вошли"
+
+#: task_manager/users/views.py:35
+msgid "Successfully logged out."
+msgstr "Вы успешно вышли"

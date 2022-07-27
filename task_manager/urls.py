@@ -21,4 +21,5 @@ urlpatterns = [
     path('', IndexPage.as_view(), name='index_page'),
     path('admin/', admin.site.urls),
     path('users/', include('task_manager.users.urls')),
+    path('', include('task_manager.users.urls')),
 ]
