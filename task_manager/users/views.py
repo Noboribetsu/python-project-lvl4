@@ -20,11 +20,13 @@ class CreateUser(SuccessMessageMixin, CreateView):
         Redirect a user to log in page after successful registration.
         Return success message after registration.
     """
-    model = User
     form_class = CustomUserCreationForm
+    form_class.base_fields['first_name'].required = True
+    form_class.base_fields['last_name'].required = True
     template_name = 'users/create.html'
     success_url = reverse_lazy('login')
     success_message = _("User was registred successfully")
+
 
 
 class AuthUser(SuccessMessageMixin, LoginView):
@@ -37,7 +39,6 @@ class AuthUser(SuccessMessageMixin, LoginView):
         Redirect a user to index page after successful login.
         Return success message.
     """
-    model = User
     form_class = AuthenticationForm
     template_name = 'users/login.html'
     next_page = reverse_lazy('index_page')
@@ -50,7 +51,6 @@ class LogOutUser(LogoutView):
         Redirect user to index page.
         Return success message.
     """
-    model = User
     next_page = reverse_lazy('index_page')
 
     def dispatch(self, request, *args, **kwargs):
