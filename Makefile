@@ -8,7 +8,7 @@ deploy:
 	git push heroku main
 
 lint:
-	poetry run flake8 task_manager
+	poetry run flake8 .
 
 messages:
 	poetry run django-admin makemessages -l ru

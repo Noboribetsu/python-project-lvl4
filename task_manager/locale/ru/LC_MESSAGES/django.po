@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-27 16:09+0300\n"
+"POT-Creation-Date: 2022-07-28 12:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,14 +43,13 @@ msgid "Welcome"
 msgstr "Добро пожаловать"
 
 #: task_manager/templates/layouts/application.html:23
+#: task_manager/templates/users/users.html:7
 msgid "Users"
 msgstr "Пользователи"
 
 #: task_manager/templates/layouts/application.html:26
-#, fuzzy
-#| msgid "Log in"
 msgid "Log out"
-msgstr "Вход"
+msgstr "Выйти"
 
 #: task_manager/templates/layouts/application.html:28
 msgid "Sign up"
@@ -65,17 +64,59 @@ msgstr "Вход"
 msgid "V.Shilo"
 msgstr "Шило В.В."
 
-#: task_manager/templates/users/create.html:5
+#: task_manager/templates/users/create.html:4
 msgid "Registration form"
 msgstr "Регистрация"
 
-#: task_manager/templates/users/create.html:9
+#: task_manager/templates/users/create.html:7
 msgid "Register"
 msgstr "Зарегистрировать"
+
+#: task_manager/templates/users/delete.html:8
+msgid "User delete"
+msgstr "Удаление пользователя"
+
+#: task_manager/templates/users/delete.html:9
+msgid "Are you sure you want to delete"
+msgstr "Вы уверены, что хотите удалить"
+
+#: task_manager/templates/users/delete.html:10
+#: task_manager/templates/users/users.html:27
+msgid "Delete"
+msgstr "Удалить"
 
 #: task_manager/templates/users/login.html:5
 msgid "Entrance"
 msgstr "Вход"
+
+#: task_manager/templates/users/update.html:4
+msgid "Update user"
+msgstr "Изменение пользователя"
+
+#: task_manager/templates/users/update.html:7
+#: task_manager/templates/users/users.html:25
+msgid "Change"
+msgstr "Изменить"
+
+#: task_manager/templates/users/users.html:11"
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: task_manager/templates/users/users.html:12
+msgid "Fullname"
+msgstr "Полное имя"
+
+#: task_manager/templates/users/users.html:13
+msgid "Created at"
+msgstr "Дата создния"
+
+#: task_manager/users/mixins.py:17
+msgid "You don't have a permission to update another user"
+msgstr "У вас нет прав для изменения другого пользователя"
+
+#: task_manager/users/mixins.py:22
+msgid "You are not logged in! Please log in."
+msgstr "Вы не авторизированы! Пожалуйста, выполните вход"
 
 #: task_manager/users/views.py:18
 msgid "User was registred successfully"
@@ -88,3 +129,11 @@ msgstr "Вы успешло вошли"
 #: task_manager/users/views.py:35
 msgid "Successfully logged out."
 msgstr "Вы успешно вышли"
+
+#: task_manager/users/views.py:49
+msgid "User updated successfully"
+msgstr "Пользователь был успешно изменен"
+
+#: task_manager/users/views.py:55
+msgid "User deleted successfully"
+msgstr "Пользователь был успешно удален"

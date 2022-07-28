@@ -1,0 +1,33 @@
+{% extends 'layouts/application.html' %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block content %}
+{% csrf_token %}
+<table class="table table-striped my-3">
+    <h1 class="cover-heading text-left mt-1">{% translate "Users" %}:</h1>
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">{% translate 'Username'%}</th>
+        <th scope="col">{% translate 'Fullname' %}</th>
+        <th scope="col">{% translate 'Created at' %}</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+   {% for user in object_list %}
+     <tr>
+       <td>{{ user.id }}</td>
+       <td>{{ user.username }}</td>
+       <td>{{ user.first_name }} {{ user.last_name }}</td>
+       <td>{{ user.date_joined|date:"d.m.Y H:i" }}</td>
+       <td>
+        <a href={% url 'update_user' user.id %}>{% translate 'Change' %}</a>
+        <br>
+        <a href={% url 'delete_user' user.id %}>{% translate 'Delete' %}</a>
+       </td>
+      </tr>
+   {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

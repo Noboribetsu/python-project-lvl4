@@ -2,10 +2,10 @@
 {% load i18n %}
 {% load bootstrap4 %}
 {% block content %}
-<h1 class="cover-heading text-left">{% translate "Entrance" %}:</h1>
+<h1 class="cover-heading text-left mt-2">{% translate "Entrance" %}:</h1>
   <form class="text-left px-5" method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
-    <button type="submit" class="btn btn-primary float-left">{% translate "Log in" %}</button>
+    <button type="submit" class="btn btn-primary float-left mb-3">{% translate "Log in" %}</button>
 </form>
 {% endblock content %}

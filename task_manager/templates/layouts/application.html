@@ -13,14 +13,14 @@
   <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-2 mx-auto flex-column">
       
-  <header class="masthead mb-auto rounded border bg-primary pl-3 p-2">
+  <header class="shadow masthead mb-auto rounded border bg-primary pl-3 p-2">
     <div class="inner">
-      <h3 class="font-weight-bold text-white text-left mx-2">{% translate "Task manager" %}</h3>
+      <a class="pl-1 nav-link" href={% url 'index_page' %}><h2 class="font-weight-bold text-white text-left">{% translate "Task manager" %}</h2></a>
       {% if user.is_authenticated %}
       <p class='font-weight-bold text-white text-left ml-2 mb-0'>{% translate "Welcome" %}, {{ user }}!</p>
       {% endif %}
       <nav class="clearfix">
-        <a class="btn rounded border bg-light m-2 p-1 px-2 active float-left" href="#">{% translate "Users" %}</a>
+        <a class="btn rounded border bg-light m-2 p-1 px-2 active float-left" href={% url 'users' %}>{% translate "Users" %}</a>
         {% if user.is_authenticated %}
 
         <a class="btn rounded border bg-light m-2 p-1 px-2 float-right" href={% url 'logout' %}>{% translate "Log out" %}</a>
@@ -32,7 +32,7 @@
     </div>
   </header>
   <div class="container mt-2">{% bootstrap_messages %}</div>
-  <main role="main" class="inner cover m-5">
+  <main role="main" class="shadow rounded inner cover px-2 mx-5 mt-4">
   {% csrf_token %}
   {% block content %}
   {% endblock content %}
