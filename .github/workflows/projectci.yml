@@ -28,5 +28,5 @@ jobs:
           CC_TEST_REPORTER_ID: e2897f0476560ec237cc26c7dddfdf8a2436802bef9fcf5c56ec2b9e353ebe8f
         with:
           coverageCommand: make test-coverage
-          coverageLocations: ${{github.workspace}}/.coverage:coverage.py
+          coverageLocations: .coverage:coverage.py
         
