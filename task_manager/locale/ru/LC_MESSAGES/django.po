@@ -108,7 +108,7 @@ msgstr "Полное имя"
 
 #: task_manager/templates/users/users.html:13
 msgid "Created at"
-msgstr "Дата создния"
+msgstr "Дата создания"
 
 #: task_manager/users/mixins.py:17
 msgid "You don't have a permission to update another user"
