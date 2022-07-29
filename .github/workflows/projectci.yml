@@ -1,1 +1,31 @@
+name: Project CI
 
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10
+          
+      - name: Install depedencies
+        run: |
+            pip install poetry
+            make setup
+        
+      - run: make lint
+          
+      - run: make test
+      
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v2.7.4
+        env:
+          CC_TEST_REPORTER_ID: e2897f0476560ec237cc26c7dddfdf8a2436802bef9fcf5c56ec2b9e353ebe8f
+        with:
+          coverageCommand: make test-coverage
+        
