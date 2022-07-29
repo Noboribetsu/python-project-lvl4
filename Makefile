@@ -1,8 +1,15 @@
+install:
+	poetry install
+
+migrate:
+	poetry run python manage.py migrat
+	
 start:
 	poetry run python manage.py runserver 0.0.0.0:8000
 
-migrate:
-	poetry run python manage.py migrate
+setup: 
+	make install 
+	make migrate
 
 deploy:
 	git push heroku main
@@ -17,6 +24,7 @@ test-coverage:
 	poetry run coverage run manage.py test task_manager	
 	poetry run coverage html
 	poetry run coverage report
+
 messages:
 	poetry run django-admin makemessages -l ru
 
