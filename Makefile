@@ -23,8 +23,8 @@ test:
 
 test-coverage:
 	poetry run coverage run manage.py test task_manager	
-	poetry run coverage html
-	poetry run coverage report
+	poetry run coverage xml
+
 
 messages:
 	poetry run django-admin makemessages -l ru
