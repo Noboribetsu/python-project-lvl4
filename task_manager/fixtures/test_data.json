@@ -1,0 +1,10 @@
+{
+    "users": {
+      "new": {
+        "first_name": "new_first_name",
+        "last_name": "new_last_name",
+        "username": "new_username",
+        "password": "new_password1"
+      }
+    }
+  }

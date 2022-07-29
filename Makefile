@@ -10,6 +10,13 @@ deploy:
 lint:
 	poetry run flake8 .
 
+test:
+	poetry run python manage.py test
+
+test-coverage:
+	poetry run coverage run manage.py test task_manager	
+	poetry run coverage html
+	poetry run coverage report
 messages:
 	poetry run django-admin makemessages -l ru
 

@@ -25,6 +25,17 @@ html5lib = ["html5lib"]
 lxml = ["lxml"]
 
 [[package]]
+name = "coverage"
+version = "6.4.2"
+description = "Code coverage measurement for Python"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+toml = ["tomli"]
+
+[[package]]
 name = "dj-database-url"
 version = "0.5.0"
 description = "Use Database URLs in your Django Application."
@@ -169,11 +180,12 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "9fa5d92756826ff956774f36f3df8b589e4c74d32320cc14507bde8954496318"
+content-hash = "f87c640de6cc1d9c952bc23b8a02875562513d187c1a85859480e5eeaf8e2903"
 
 [metadata.files]
 asgiref = []
 beautifulsoup4 = []
+coverage = []
 dj-database-url = []
 django = []
 django-bootstrap4 = []

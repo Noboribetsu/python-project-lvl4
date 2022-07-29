@@ -28,7 +28,6 @@ class CreateUser(SuccessMessageMixin, CreateView):
     success_message = _("User was registred successfully")
 
 
-
 class AuthUser(SuccessMessageMixin, LoginView):
     """
         Authentication view.
