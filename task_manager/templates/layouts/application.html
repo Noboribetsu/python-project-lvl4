@@ -22,7 +22,7 @@
       <nav class="clearfix">
         <a class="btn rounded border bg-light m-2 p-1 px-2 active float-left" href={% url 'users' %}>{% translate "Users" %}</a>
         {% if user.is_authenticated %}
-
+        <a class="btn rounded border bg-light m-2 p-1 px-2 float-left" href={% url 'statuses' %}>{% translate "Statuses" %}</a>
         <a class="btn rounded border bg-light m-2 p-1 px-2 float-right" href={% url 'logout' %}>{% translate "Log out" %}</a>
         {% else %}
         <a class="btn rounded border bg-light m-2 p-1 px-2 float-right" href={% url 'create_user' %}>{% translate "Sign up" %}</a>

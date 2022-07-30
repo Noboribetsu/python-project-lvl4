@@ -1,0 +1,36 @@
+{% extends 'layouts/application.html' %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block content %}
+{% csrf_token %}
+<h1 class="cover-heading text-left mt-1">{% translate "Statuses" %}:</h1>
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href={% url 'create_status' %}>{% translate 'Create status' %}</a>
+  </li>
+</ul>
+<table class="table table-striped my-3">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">{% translate 'Name'%}</th>
+        <th scope="col">{% translate 'Created at' %}</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+   {% for status in object_list %}
+     <tr>
+       <td>{{ status.id }}</td>
+       <td>{{ status.name }}</td>
+       <td>{{ status.created_at|date:"d.m.Y H:i" }}</td>
+       <td>
+        <a href={% url 'update_status' status.id %}>{% translate 'Change' %}</a>
+        <br>
+        <a href={% url 'delete_status' status.id %}>{% translate 'Delete' %}</a>
+       </td>
+      </tr>
+   {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
