@@ -90,5 +90,6 @@ class UsersTest(TestCase):
         response = self.client.get(reverse('delete_user', args=[user.id]))
         self.assertEqual(response.status_code, 200)
         response = self.client.post(reverse('delete_user', args=[user.id]))
+        self.assertRedirects(response, reverse('users'))
         with self.assertRaises(ObjectDoesNotExist):
             User.objects.get(id=user.id)
