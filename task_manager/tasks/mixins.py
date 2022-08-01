@@ -8,6 +8,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 from task_manager.tasks.models import Task
 
+
 class CustomLoginRequiredMixin(LoginRequiredMixin):
     """
         Login required check.
@@ -29,16 +30,15 @@ class TaskCheckOnDeleteMixin(UserPassesTestMixin, SuccessMessageMixin):
     """
         Task check on delete action Mixin:
         Only author is able to delete his task.
-
     """
     def test_func(self):
-            task = Task.objects.get(id=self.kwargs['pk'])
-            if task.author_id == self.request.user.id:
-                return True
-            messages.add_message(
-                self.request, messages.ERROR,
-                _('Only an author is able to delete a task'))
-            return False
+        task = Task.objects.get(id=self.kwargs['pk'])
+        if task.author_id == self.request.user.id:
+            return True
+        messages.add_message(
+            self.request, messages.ERROR,
+            _('Only an author is able to delete a task'))
+        return False
 
     def handle_no_permission(self):
         return redirect(reverse_lazy('tasks'))
