@@ -1,0 +1,37 @@
+{% extends 'layouts/application.html' %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block content %}
+{% csrf_token %}
+<div class="card text-left my-4 mx-3">
+    <h5 class="card-header">{% translate "Task" %}</h5>
+    <div class="card-body">
+      <h5 class="card-title">{{ task }}</h5>
+      <p class="card-text">{{ task.description }}</p>
+      <a href={% url 'update_task' task.id %} class="btn btn-primary">{% translate 'Change' %}</a>
+      <a href={% url 'delete_task' task.id %} class="btn btn-primary">{% translate 'Delete' %}</a>
+    </div>
+    <div class="card-footer text-muted">
+        <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td>{% translate "Author" %}</td>
+                <td>{{ task.author }}</td>
+              </tr>
+              <tr>
+                <td>{% translate "Executor" %}</td>
+                <td>{{ task.executor}}</td>
+              </tr>
+              <tr>
+                <td>{% translate "Status" %}</td>
+                <td>{{ task.status}}</td>
+              </tr>
+              <tr>
+                <td>{% translate "Creation date" %}</td>
+                <td>{{ task.created_at|date:"d.m.Y H:i" }}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+{% endblock content %}

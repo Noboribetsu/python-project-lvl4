@@ -1,0 +1,42 @@
+{% extends 'layouts/application.html' %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block content %}
+{% csrf_token %}
+<h1 class="cover-heading text-left mt-1">{% translate "Tasks" %}:</h1>
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href={% url 'create_task' %}>{% translate 'Create task' %}</a>
+  </li>
+</ul>
+<table class="table table-striped my-3">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">{% translate 'Name'%}</th>
+        <th scope="col">{% translate 'Status'%}</th>
+        <th scope="col">{% translate 'Author'%}</th>
+        <th scope="col">{% translate 'Executor'%}</th>
+        <th scope="col">{% translate 'Created at' %}</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+   {% for task in object_list %}
+     <tr>
+       <td>{{ task.id }}</td>
+       <td><a href={% url 'task_details' task.id %}>{{ task.name }}</a></td>
+       <td>{{ task.status }}</td>
+       <td>{{ task.author }}</td>
+       <td>{{ task.executor }}</td>
+       <td>{{ task.created_at|date:"d.m.Y H:i" }}</td>
+       <td>
+        <a href={% url 'update_task' task.id %}>{% translate 'Change' %}</a>
+        <br>
+        <a href={% url 'delete_task' task.id %}>{% translate 'Delete' %}</a>
+       </td>
+      </tr>
+   {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
