@@ -1,6 +1,8 @@
+from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.db.models import ProtectedError
 from django.utils.translation import gettext as _
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView, LogoutView
@@ -93,6 +95,15 @@ class UserDelete(UserCheckActionMixin, DeleteView):
         Return success message or error message.
     """
     model = User
-    template_name = 'users/delete.html'
-    success_url = reverse_lazy('users')
-    success_message = _("User deleted successfully")
+    template_name = ('users/delete.html')
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        url = reverse_lazy('users')
+        try:
+            self.object.delete()
+            messages.add_message(request, messages.SUCCESS, _("User deleted successfully"))
+        except ProtectedError:
+            messages.add_message(request, messages.ERROR, _('Not possible to delete a used user'))
+            return HttpResponseRedirect(url)
+        return HttpResponseRedirect(url)
