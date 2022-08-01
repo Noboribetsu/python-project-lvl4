@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-01 15:12+0300\n"
+"POT-Creation-Date: 2022-08-01 18:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/statuses/mixins.py:19 task_manager/tasks/mixins.py:19
+#: task_manager/statuses/mixins.py:19 task_manager/tasks/mixins.py:24
 #: task_manager/users/mixins.py:29
 msgid "You are not logged in! Please log in."
 msgstr "Вы не авторизированы! Пожалуйста, выполните вход"
@@ -46,6 +46,10 @@ msgstr "Статус был успешно удален"
 #: task_manager/statuses/views.py:76
 msgid "Not possible to delete a used status"
 msgstr "Невозможно удалить статус, потому что он используется"
+
+#: task_manager/tasks/mixins.py:40
+msgid "Only an author is able to delete a task"
+msgstr "Задачу может удалить только её автор"
 
 #: task_manager/tasks/views.py:32
 msgid "Description"

@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
 from django.contrib.messages.views import SuccessMessageMixin
-from task_manager.statuses.mixins import CustomLoginRequiredMixin
+from task_manager.tasks.mixins import CustomLoginRequiredMixin, TaskCheckOnDeleteMixin
 
 
 class TasksList(CustomLoginRequiredMixin, ListView):
@@ -57,7 +57,7 @@ class UpdateTask(CustomLoginRequiredMixin, SuccessMessageMixin, UpdateView):
     success_message = _('Task updated successfully')
 
 
-class DeleteTask(CustomLoginRequiredMixin, SuccessMessageMixin, DeleteView):
+class DeleteTask(CustomLoginRequiredMixin, TaskCheckOnDeleteMixin, DeleteView):
     """
         User delete view.
         Render a delete temlate for user.
