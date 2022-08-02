@@ -20,6 +20,15 @@ class LabelsList(CustomLoginRequiredMixin, ListView):
 
 
 class CreateLabel(CustomLoginRequiredMixin, SuccessMessageMixin, CreateView):
+    """
+        Create label view.
+        Render a create label template.
+        GET - create form
+        POST - add data to DB(Label model)
+        Redirect a user to labels page after successful creation.
+        Return success message.
+        Availiable only for logged users.
+    """
     form_class = LabelForm
     form_class.base_fields['name'].label = _('Name')
     template_name = 'labels/create.html'
@@ -28,6 +37,15 @@ class CreateLabel(CustomLoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 
 class UpdateLabel(CustomLoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    """
+        Update label view.
+        Render a update label template.
+        GET - update form
+        POST - update data at DB(Label model)
+        Redirect a user to labels page after successful update.
+        Return success message.
+        Availiable only for logged users.
+    """
     model = Label
     form_class = LabelForm
     template_name = 'labels/update.html'
@@ -36,6 +54,14 @@ class UpdateLabel(CustomLoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
 
 class DeleteLabel(CustomLoginRequiredMixin, DeleteView):
+    """
+        Label delete view.
+        Render a delete temlate for user.
+        GET - ask user about the delete action.
+        POST - delete label from DB(Label model).
+        Return success message or error message.
+        Availiable only for logged users.
+    """
     model = Label
     template_name = 'labels/delete.html'
 

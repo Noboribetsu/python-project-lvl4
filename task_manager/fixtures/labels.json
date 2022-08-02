@@ -1,0 +1,34 @@
+[
+{
+  "model": "labels.label",
+  "pk": 2,
+  "fields": {
+    "name": "Bug",
+    "created_at": "2022-08-02T11:18:56.821Z"
+  }
+},
+{
+  "model": "labels.label",
+  "pk": 3,
+  "fields": {
+    "name": "Urgent",
+    "created_at": "2022-08-02T11:19:02.053Z"
+  }
+},
+{
+  "model": "labels.label",
+  "pk": 4,
+  "fields": {
+    "name": "New label",
+    "created_at": "2022-08-02T11:57:24.761Z"
+  }
+},
+{
+  "model": "labels.label",
+  "pk": 5,
+  "fields": {
+    "name": "Newest label",
+    "created_at": "2022-08-02T11:57:49.172Z"
+  }
+}
+]
