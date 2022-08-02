@@ -1,0 +1,36 @@
+{% extends 'layouts/application.html' %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block content %}
+{% csrf_token %}
+<h1 class="cover-heading text-left mt-1">{% translate "Labels" %}:</h1>
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href={% url 'create_label' %}>{% translate 'Create label' %}</a>
+  </li>
+</ul>
+<table class="table table-striped my-3">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">{% translate 'Name'%}</th>
+        <th scope="col">{% translate 'Created at' %}</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+   {% for label in object_list %}
+     <tr>
+       <td>{{ label.id }}</td>
+       <td>{{ label.name }}</a></td>
+       <td>{{ label.created_at|date:"d.m.Y H:i" }}</td>
+       <td>
+        <a href={% url 'update_label' label.id %}>{% translate 'Change' %}</a>
+        <br>
+        <a href={% url 'delete_label' label.id %}>{% translate 'Delete' %}</a>
+       </td>
+      </tr>
+   {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

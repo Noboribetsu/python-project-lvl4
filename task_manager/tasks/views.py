@@ -32,6 +32,7 @@ class CreateTask(CustomLoginRequiredMixin, SuccessMessageMixin, CreateView):
     form_class.base_fields['description'].label = _('Description')
     form_class.base_fields['status'].label = _('Status')
     form_class.base_fields['executor'].label = _('Executor')
+    form_class.base_fields['labels'].label = _('Labels')
     success_url = reverse_lazy('tasks')
     success_message = _('Task created successfully')
 

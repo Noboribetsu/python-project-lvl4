@@ -30,6 +30,16 @@
                 <td>{% translate "Creation date" %}</td>
                 <td>{{ task.created_at|date:"d.m.Y H:i" }}</td>
               </tr>
+              <tr>
+                <td>{% translate "Labels" %}:</td>
+                <td>
+                  <ul>
+                    {% for label in task.labels.all %}
+                    <li>{{ label }}</li>
+                    {% endfor %}
+                  </ul>
+                </td>
+              </tr>
             </tbody>
         </table>
     </div>

@@ -15,6 +15,10 @@ class Task(models.Model):
         'auth.User',
         on_delete=models.PROTECT,
         related_name='executor', blank=True, null=True)
+    labels = models.ManyToManyField(
+        'labels.Label', through='TaskLabels',
+        through_fields=('task', 'label'), blank=True,
+        related_name='labels')
     author = models.ForeignKey(
         'auth.User',
         on_delete=models.PROTECT,
@@ -23,3 +27,8 @@ class Task(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class TaskLabels(models.Model):
+    task = models.ForeignKey('tasks.Task', on_delete=models.PROTECT)
+    label = models.ForeignKey('labels.Label', on_delete=models.PROTECT)
