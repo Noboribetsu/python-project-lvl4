@@ -1,0 +1,26 @@
+[
+{
+  "model": "tasks.task",
+  "pk": 3,
+  "fields": {
+    "name": "Добавить перевод",
+    "description": "Описание текущей задачи. \r\nТут много разного текста и условий. Еще не много текста",
+    "status": 4,
+    "executor": 6,
+    "author": 18,
+    "created_at": "2022-08-01T08:13:06.746Z"
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 7,
+  "fields": {
+    "name": "New task",
+    "description": "New task description",
+    "status": 5,
+    "executor": 7,
+    "author": 6,
+    "created_at": "2022-08-02T05:45:57.607Z"
+  }
+}
+]

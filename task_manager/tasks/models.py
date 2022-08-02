@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Task(models.Model):
+    """
+        Task model class.
+    """
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField(blank=True)
     status = models.ForeignKey(

@@ -9,8 +9,8 @@ from task_manager.tasks.mixins import CustomLoginRequiredMixin, TaskCheckOnDelet
 
 class TasksList(CustomLoginRequiredMixin, ListView):
     """
-        View return list of all exist tasks.
-        Availiable on for logged users.
+        View return a list of all exist tasks.
+        Availiable only for logged users.
     """
     model = Task
     template_name = 'tasks/tasks.html'
@@ -20,11 +20,11 @@ class CreateTask(CustomLoginRequiredMixin, SuccessMessageMixin, CreateView):
     """
         Create task view.
         Render a create task template.
-        GET - Create form
+        GET - create form
         POST - add data to DB(Task model)
-        Redirect a user to tassk page after successful creation.
+        Redirect a user to tasks page after successful creation.
         Return success message.
-        Availiable on for logged users.
+        Availiable only for logged users.
     """
     template_name = 'tasks/create.html'
     form_class = TaskForm
@@ -43,7 +43,7 @@ class CreateTask(CustomLoginRequiredMixin, SuccessMessageMixin, CreateView):
 class UpdateTask(CustomLoginRequiredMixin, SuccessMessageMixin, UpdateView):
     """
         Update task view.
-        Render a create task template.
+        Render a update task template.
         GET - update form
         POST - update data at DB(Task model)
         Redirect a user to tasks page after successful update.
@@ -59,11 +59,12 @@ class UpdateTask(CustomLoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
 class DeleteTask(CustomLoginRequiredMixin, TaskCheckOnDeleteMixin, DeleteView):
     """
-        User delete view.
+        Task delete view.
         Render a delete temlate for user.
         GET - ask user about the delete action.
-        POST - delete user from DB(User model).
-        Check if user logged and if a user try to update his own details.
+        POST - delete task from DB(Task model).
+        Only author is able to delete a task.
+        Availiable only for logged users.
         Return success message or error message.
     """
     model = Task
@@ -73,5 +74,11 @@ class DeleteTask(CustomLoginRequiredMixin, TaskCheckOnDeleteMixin, DeleteView):
 
 
 class DetailTask(CustomLoginRequiredMixin, DetailView):
+    """
+        Task detail view.
+        Render a detail page for user.
+        With detailed information about a task.
+        Availiable only for logged users.
+    """
     model = Task
     template_name = 'tasks/detail.html'

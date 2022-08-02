@@ -23,16 +23,16 @@ class StatusTest(TestCase):
 
     def check_login_requirements(self, url):
         # Check for not logged user
-        response = self.client.get(reverse(url))
+        response = self.client.get(url)
         self.assertRedirects(response, reverse('login'))
         # Create logged user, check for logged user
         self.create_logged_user()
-        response = self.client.get(reverse(url))
+        response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         return response
 
     def test_statuses_page(self):
-        response = self.check_login_requirements('statuses')
+        response = self.check_login_requirements(reverse('statuses'))
         # Check that response return QuerySet with statuses from DB
         statuses = Status.objects.all()
         self.assertQuerysetEqual(
@@ -40,7 +40,7 @@ class StatusTest(TestCase):
             ordered=False)
 
     def test_create_status_page(self):
-        self.check_login_requirements('create_status')
+        self.check_login_requirements(reverse('create_status'))
         # Create a new status for check
         response = self.client.post(
             reverse('create_status'),
@@ -50,19 +50,22 @@ class StatusTest(TestCase):
         self.assertEqual(new_status.name, 'new_status')
 
     def test_update_status_page(self):
-        self.check_login_requirements('create_status')
         old_status = Status.objects.all()[0]
-        response = self.client.post(reverse(
-            'update_status', args=[old_status.id]),
+        self.check_login_requirements(
+            reverse('update_status', args=[old_status.id]))
+        response = self.client.post(
+            reverse('update_status', args=[old_status.id]),
             {'name': 'updated_name'})
         self.assertRedirects(response, reverse('statuses'))
         new_status = Status.objects.get(id=old_status.id)
         self.assertEqual(new_status.name, 'updated_name')
 
     def test_delete_status_page(self):
-        self.check_login_requirements('create_status')
         status = Status.objects.all()[0]
-        response = self.client.post(reverse('delete_status', args=[status.id]))
+        self.check_login_requirements(
+            reverse('delete_status', args=[status.id]))
+        response = self.client.post(
+            reverse('delete_status', args=[status.id]))
         self.assertRedirects(response, reverse('statuses'))
         with self.assertRaises(ObjectDoesNotExist):
             Status.objects.get(id=status.id)

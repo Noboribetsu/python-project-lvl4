@@ -1,12 +1,11 @@
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
+from task_manager.tasks.models import Task
 from django.utils.translation import gettext as _
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
-
-from task_manager.tasks.models import Task
 
 
 class CustomLoginRequiredMixin(LoginRequiredMixin):
@@ -35,10 +34,11 @@ class TaskCheckOnDeleteMixin(UserPassesTestMixin, SuccessMessageMixin):
         task = Task.objects.get(id=self.kwargs['pk'])
         if task.author_id == self.request.user.id:
             return True
+        self.login_url = reverse_lazy('tasks')
         messages.add_message(
             self.request, messages.ERROR,
             _('Only an author is able to delete a task'))
         return False
 
     def handle_no_permission(self):
-        return redirect(reverse_lazy('tasks'))
+        return redirect(self.login_url)
