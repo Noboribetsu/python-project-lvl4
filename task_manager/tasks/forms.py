@@ -18,6 +18,9 @@ class TaskForm(ModelForm):
 
 
 class TaskFilter(FilterSet):
+    """
+        Filters for a task page.
+    """
     status = ModelChoiceFilter(label=_('Status'), queryset=Status.objects.all())
     executor = ModelChoiceFilter(label=_('Executor'), queryset=User.objects.all())
     label = ModelChoiceFilter(label=_('Labels'), queryset=Label.objects.all())
