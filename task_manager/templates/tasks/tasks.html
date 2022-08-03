@@ -9,6 +9,23 @@
     <a class="nav-link active" href={% url 'create_task' %}>{% translate 'Create task' %}</a>
   </li>
 </ul>
+<form class="form-inline p-2" method="get">
+  <div class="input-group mb-2 mr-sm-2 pl-2">
+    {% bootstrap_field filter.form.status field_class='m-2' bound_css_class='' size='medium' %}
+  </div>
+  <div class="input-group mb-2 mr-sm-2">
+    {% bootstrap_field filter.form.executor field_class='m-2' bound_css_class='' size='medium' %}
+  </div>
+  <div class="form-check mb-2 mr-sm-2">
+    {% bootstrap_field filter.form.labels field_class='m-2' bound_css_class='' size='medium' %}
+  </div>
+  <div class="form-check mb-2 mr-sm-2">
+    {% bootstrap_field filter.form.self_tasks field_class='m-2' bound_css_class='' size='medium' %}
+  </div>
+  <div class="form-check mb-2 mr-sm-2">
+  <button type="submit" class="btn btn-primary mb-2v">{% translate 'Show' %}</button>
+  </div>
+</form>
 <table class="table table-striped my-3">
     <thead>
       <tr>

@@ -1,19 +1,21 @@
-from task_manager.tasks.forms import TaskForm
+from task_manager.tasks.forms import TaskFilter, TaskForm
 from task_manager.tasks.models import Task
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
+from django_filters.views import FilterView
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from django.contrib.messages.views import SuccessMessageMixin
 from task_manager.tasks.mixins import CustomLoginRequiredMixin, TaskCheckOnDeleteMixin
 
 
-class TasksList(CustomLoginRequiredMixin, ListView):
+class TasksList(CustomLoginRequiredMixin, FilterView):
     """
         View return a list of all exist tasks.
         Availiable only for logged users.
     """
     model = Task
     template_name = 'tasks/tasks.html'
+    filterset_class = TaskFilter
 
 
 class CreateTask(CustomLoginRequiredMixin, SuccessMessageMixin, CreateView):
