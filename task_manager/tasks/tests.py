@@ -34,6 +34,17 @@ class TestTask(TestCase):
         self.assertQuerysetEqual(
             response.context['task_list'], tasks,
             ordered=False)
+        # Test filters for tasks
+        response = self.client.get(reverse('tasks'), {'executor': 7})
+        task = Task.objects.filter(executor_id=7)
+        self.assertQuerysetEqual(
+            response.context['task_list'], task,
+            ordered=False)
+        response = self.client.get(reverse('tasks'), {'status': 4})
+        task = Task.objects.filter(status_id=4)
+        self.assertQuerysetEqual(
+            response.context['task_list'], task,
+            ordered=False)
 
     def test_task_detail_page(self):
         task = Task.objects.all()[0]
