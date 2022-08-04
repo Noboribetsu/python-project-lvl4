@@ -3,6 +3,9 @@ Task Manager – система управления задачами, подо�
 Не зарегестрировану пользователю доступен только список пользователей.
 Задачи, Статусы, Метки доступны после регистрации.
 
+### Link:
+https://sleepy-temple-25868.herokuapp.com/
+
 ### Requrements:
 * Python 3.9+
 * Poetry
@@ -42,6 +45,3 @@ make test-coverage # run tests with coverage report
 
 ### CI:
 [![Project CI](https://github.com/Noboribetsu/python-project-lvl4/actions/workflows/projectci.yml/badge.svg)](https://github.com/Noboribetsu/python-project-lvl4/actions/workflows/projectci.yml)
-
-### Link:
-https://sleepy-temple-25868.herokuapp.com/
