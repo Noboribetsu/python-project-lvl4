@@ -301,11 +301,11 @@ msgstr "Пользователь был успешно зарегистриро�
 
 #: task_manager/users/views.py:46
 msgid "You log in successfully"
-msgstr "Вы успешло вошли"
+msgstr "Вы залогинены"
 
 #: task_manager/users/views.py:59
 msgid "Successfully logged out."
-msgstr "Вы успешно вышли"
+msgstr "Вы разлогинены"
 
 #: task_manager/users/views.py:85
 msgid "User updated successfully"
