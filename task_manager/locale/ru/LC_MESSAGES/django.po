@@ -104,11 +104,11 @@ msgstr "Задача успешно создана"
 
 #: task_manager/tasks/views.py:60
 msgid "Task updated successfully"
-msgstr "Задача успешна изменена"
+msgstr "Задача успешно изменена"
 
 #: task_manager/tasks/views.py:76
 msgid "Task deleted successfully"
-msgstr "Задача успешна удалена"
+msgstr "Задача успешно удалена"
 
 #: task_manager/templates/index.html:5
 msgid "Welcome to Task manager!"
