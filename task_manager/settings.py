@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
+import rollbar
 from pathlib import Path
 from dotenv import load_dotenv
 import dj_database_url
@@ -149,5 +150,4 @@ ROLLBAR = {
     'environment': 'development' if os.getenv('DEBUG', 'False') else 'production',
     'root': BASE_DIR,
 }
-import rollbar
 rollbar.init(**ROLLBAR)
