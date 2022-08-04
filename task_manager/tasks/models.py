@@ -33,5 +33,5 @@ class TaskLabels(models.Model):
     """
         Task label model for m2m relations.
     """
-    task = models.ForeignKey('tasks.Task', on_delete=models.PROTECT)
+    task = models.ForeignKey('tasks.Task', on_delete=models.CASCADE)
     label = models.ForeignKey('labels.Label', on_delete=models.PROTECT)
