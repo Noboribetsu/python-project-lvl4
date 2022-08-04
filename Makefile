@@ -8,7 +8,7 @@ start:
 	poetry run python manage.py runserver 0.0.0.0:8000
 
 setup:
-	cp -n .env.example .env
+	cp -n .env.example .env || true
 	make install
 	make migrate
 
