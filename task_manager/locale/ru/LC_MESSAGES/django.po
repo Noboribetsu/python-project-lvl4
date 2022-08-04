@@ -295,7 +295,7 @@ msgstr "У вас нет прав для изменения другого по�
 
 #: task_manager/users/views.py:30
 msgid "User was registred successfully"
-msgstr "Пользователь был успешно зарегистрирован"
+msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/users/views.py:46
 msgid "You log in successfully"
@@ -307,11 +307,11 @@ msgstr "Вы разлогинены"
 
 #: task_manager/users/views.py:85
 msgid "User updated successfully"
-msgstr "Пользователь был успешно изменен"
+msgstr "Пользователь успешно изменен"
 
 #: task_manager/users/views.py:105
 msgid "User deleted successfully"
-msgstr "Пользователь был успешно удален"
+msgstr "Пользователь успешно удален"
 
 #: task_manager/users/views.py:107
 msgid "Not possible to delete a used user"
