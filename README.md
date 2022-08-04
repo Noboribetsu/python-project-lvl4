@@ -1,3 +1,38 @@
+### Description:
+Task Manager – система управления задачами, подобная http://www.redmine.org/. Она позволяет ставить задачи, назначать исполнителей и менять их статусы. Для работы с системой требуется регистрация и аутентификация.
+Не зарегестрировану пользователю доступен только список пользователей.
+Задачи, Статусы, Метки доступны после регистрации.
+
+### Requrements:
+* Python 3.9+
+* Poetry
+* GNU Make
+
+### Setup:
+```bash
+make setup
+```
+### Run server
+```bash
+make start
+# Open http://0.0.0.0:8000/
+```
+
+## Check codestyle
+
+```bash
+make lint
+```
+
+## Run tests
+
+```bash
+make test
+make test-coverage # run tests with coverage report
+```
+
+
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Noboribetsu/python-project-lvl4/workflows/hexlet-check/badge.svg)](https://github.com/Noboribetsu/python-project-lvl4/actions)
 
