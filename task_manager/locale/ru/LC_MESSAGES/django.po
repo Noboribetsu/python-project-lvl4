@@ -307,7 +307,7 @@ msgstr "Вы разлогинены"
 
 #: task_manager/users/views.py:85
 msgid "User updated successfully"
-msgstr "Пользователь успешно изменен"
+msgstr "Пользователь успешно изменён"
 
 #: task_manager/users/views.py:105
 msgid "User deleted successfully"
