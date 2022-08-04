@@ -50,15 +50,15 @@ msgstr "Невозможно удалить метку, потому что он
 
 #: task_manager/statuses/views.py:27
 msgid "Status created successfully"
-msgstr "Cтатус успешно создан"
+msgstr "Статус успешно создан"
 
 #: task_manager/statuses/views.py:53
 msgid "Status updated successfully"
-msgstr "Статус был успешно изменен"
+msgstr "Статус успешно изменён"
 
 #: task_manager/statuses/views.py:74
 msgid "Status delete successfully"
-msgstr "Статус был успешно удален"
+msgstr "Статус успешно удалён"
 
 #: task_manager/statuses/views.py:76
 msgid "Not possible to delete a used status"
@@ -101,11 +101,11 @@ msgstr "Задача успешно создана"
 
 #: task_manager/tasks/views.py:60
 msgid "Task updated successfully"
-msgstr "Задача была успешна изменена"
+msgstr "Задача успешна изменена"
 
 #: task_manager/tasks/views.py:76
 msgid "Task deleted successfully"
-msgstr "Задача была успешна удалена"
+msgstr "Задача успешна удалена"
 
 #: task_manager/templates/index.html:5
 msgid "Welcome to Task manager!"
