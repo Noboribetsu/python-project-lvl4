@@ -22,13 +22,11 @@ make start
 ```
 
 ## Check codestyle
-
 ```bash
 make lint
 ```
 
 ## Run tests
-
 ```bash
 make test
 make test-coverage # run tests with coverage report
