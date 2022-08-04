@@ -20,12 +20,12 @@ make start
 # Open http://0.0.0.0:8000/
 ```
 
-## Check codestyle
+### Check codestyle
 ```bash
 make lint
 ```
 
-## Run tests
+### Run tests
 ```bash
 make test
 make test-coverage # run tests with coverage report
