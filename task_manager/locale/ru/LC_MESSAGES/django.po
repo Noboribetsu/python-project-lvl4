@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-03 13:36+0300\n"
+"POT-Creation-Date: 2022-08-04 10:36+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,26 +64,26 @@ msgstr "Статус был успешно удален"
 msgid "Not possible to delete a used status"
 msgstr "Невозможно удалить статус, потому что он используется"
 
-#: task_manager/tasks/forms.py:21 task_manager/tasks/views.py:35
+#: task_manager/tasks/forms.py:24 task_manager/tasks/views.py:35
 #: task_manager/templates/tasks/detail.html:26
 #: task_manager/templates/tasks/tasks.html:34
 msgid "Status"
 msgstr "Статус"
 
-#: task_manager/tasks/forms.py:22 task_manager/tasks/views.py:36
+#: task_manager/tasks/forms.py:25 task_manager/tasks/views.py:36
 #: task_manager/templates/tasks/detail.html:22
 #: task_manager/templates/tasks/tasks.html:36
 msgid "Executor"
 msgstr "Исполнитель"
 
-#: task_manager/tasks/forms.py:23 task_manager/tasks/views.py:37
+#: task_manager/tasks/forms.py:26 task_manager/tasks/views.py:37
 #: task_manager/templates/labels/labels.html:6
 #: task_manager/templates/layouts/application.html:26
 #: task_manager/templates/tasks/detail.html:34
 msgid "Labels"
 msgstr "Метки"
 
-#: task_manager/tasks/forms.py:24
+#: task_manager/tasks/forms.py:28
 msgid "Only own tasks"
 msgstr "Только свои задачи"
 
@@ -210,8 +210,8 @@ msgid "Sign up"
 msgstr "Регистрация"
 
 #: task_manager/templates/layouts/application.html:31
-#: task_manager/templates/users/login.html:9
-msgid "Log in"
+#: task_manager/templates/users/login.html:5
+msgid "Entrance"
 msgstr "Вход"
 
 #: task_manager/templates/layouts/application.html:45
@@ -273,9 +273,11 @@ msgstr "Зарегистрировать"
 msgid "User delete"
 msgstr "Удаление пользователя"
 
-#: task_manager/templates/users/login.html:5
-msgid "Entrance"
-msgstr "Вход"
+#: task_manager/templates/users/login.html:9
+#, fuzzy
+#| msgid "Log out"
+msgid "Log in"
+msgstr "Выйти"
 
 #: task_manager/templates/users/update.html:4
 msgid "Update user"
@@ -316,6 +318,14 @@ msgstr "Пользователь был успешно удален"
 #: task_manager/users/views.py:107
 msgid "Not possible to delete a used user"
 msgstr "Невозможно удалить пользователя, потому что он используется"
+
+#, fuzzy
+#~| msgid "Entrance"
+#~ msgid "Entry"
+#~ msgstr "Вход"
+
+#~ msgid "Login"
+#~ msgstr "Вход"
 
 #~ msgid "name"
 #~ msgstr "Имя"
